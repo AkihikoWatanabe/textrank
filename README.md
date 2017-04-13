@@ -8,7 +8,7 @@ https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf
 Note that, the keyword extraction method that also proposed by this paper is not supported.
 
 TextRank is a graph-based summarization model based on PageRank like algorithm.
-This script does not perform any tokenization and normalization of texts, so you should preprocess your data beforehand.  
+Any tokenization and normalization of texts does not performed on the scripts, so you should preprocess your data beforehand.  
 
 # Example
 ```python
