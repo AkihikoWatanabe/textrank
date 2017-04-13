@@ -32,10 +32,12 @@ class TextRank:
         """ Calculate similarity based on similarity function in Sec. 4.1.
         """
         def __sim_func(i, j):
-            if i==j:
-                return 0.0
             tokens1, tokens2 = self.sents[i], self.sents[j]
-            return len(set(tokens1) & set(tokens2)) / (math.log(len(tokens1)) + math.log(len(tokens2)))
+            overlap = len(set(tokens1) & set(tokens2))
+
+            if i==j or overlap==0:
+                return 0.0
+            return overlap / (math.log(len(tokens1)) + math.log(len(tokens2)))
         
         N = len(self.sents)
         _sim_mat = np.asarray([[__sim_func(i, j) for j in xrange(N)] for i in xrange(N)], dtype=np.float32)
