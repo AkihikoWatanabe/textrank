@@ -2,7 +2,6 @@
 
 import math
 import numpy as np
-#np.seterr(divide='ignore', invalid='ignore')
 
 class TextRank:
     """ This class is the implementation of TextRank proposed by following paper.
@@ -61,6 +60,8 @@ class TextRank:
 
     def run(self, debug=False):
         """ Run iteration to calculate TextRank score.
+        Params:
+            debug(boolean): if debug equals True, #_of_iter and diff will be presented at each iter.
         """
         self.__calc_similarity()
         
