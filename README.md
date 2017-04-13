@@ -27,7 +27,7 @@ sents_tokens = [sent.split(" ") for sent in sentences]
 # the sentences need to be represented as a list of tokens.
 tr.set_sentences(sents_toks)
 
-# run TextRank algorithm and TextRank score for sentences
+# run TextRank algorithm and calculate TextRank score for sentences
 # if you set debug=True, #_of_iteration and convergence information will be presented.
 tr.run(debug=True)
 
