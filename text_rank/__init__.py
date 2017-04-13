@@ -1,1 +1,1 @@
-from textrank import TextRank
+from text_rank import TextRank
