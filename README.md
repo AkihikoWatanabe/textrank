@@ -22,7 +22,16 @@ sentences = [
         "There is no need for alarm Civil Defense Director Eugenio Cabral said in a television alert shortly before midnight Saturday"]
 
 sents_tokens = [sent.split(" ") for sent in sentences]
+
+# set sentences that you want to summarize in the TextRank instance.
+# the sentences need to be represented as a list of tokens.
 tr.set_sentences(sents_toks)
+
+# run TextRank algorithm and TextRank score for sentences
+# if you set debug=True, #_of_iteration and convergence information will be presented.
 tr.run(debug=True)
+
+# you can access the final TextRank score as TextRank instance property
+# tr.textrank[i] representes final TextRank score for i-th sentence
 print tr.textrank
 ```
