@@ -11,7 +11,7 @@ TextRank is a graph-based summarization model based on PageRank like algorithm.
 This script does not perform any tokenization and normalization of texts, so you should preprocess your data beforehand.  
 
 # Example
-```python:example
+```python
 from text_rank import TextRank
 
 tr = TextRank()
