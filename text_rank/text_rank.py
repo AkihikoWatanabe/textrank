@@ -80,7 +80,7 @@ class TextRank:
                 iter_count += 1
                 print("Iteration {0}: diff={1}".format(iter_count, diff))
 
-        self.text_rank = tr / sum(tr)
+        self.text_rank = tr
 
 if __name__ == '__main__':
     tr = TextRank()
