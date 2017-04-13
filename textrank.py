@@ -38,9 +38,9 @@ class TextRank:
             return len(set(tokens1) & set(tokens2)) / (math.log(len(tokens1)) + math.log(len(tokens2)))
         
         N = len(self.sents)
-        _sim_mat = np.asarray([[__sim_func(i, j) for j in xrange(N)] for i in xrange(N)], dtype=np.float64)
+        _sim_mat = np.asarray([[__sim_func(i, j) for j in xrange(N)] for i in xrange(N)], dtype=np.float32)
         # normalize (sum of row equals 1)
-        self.sim_mat = np.asarray([_sim_mat[i]/sum(_sim_mat[i]) if sum(_sim_mat[i]!=0.0) else _sim_mat[i] for i in xrange(N)], dtype=np.float64)
+        self.sim_mat = np.asarray([_sim_mat[i]/sum(_sim_mat[i]) if sum(_sim_mat[i]!=0.0) else _sim_mat[i] for i in xrange(N)], dtype=np.float32)
         print self.sim_mat
   
     def __calc_diff(self, vec1, vec2):
@@ -67,7 +67,7 @@ class TextRank:
         
         diff = 1
         N = len(self.sents)
-        tr = np.asarray([1.0 / N for _ in xrange(N)], dtype=np.float64)
+        tr = np.asarray([1.0 / N for _ in xrange(N)], dtype=np.float32)
         iter_count = 0
         while diff > self.CONV_THR:
             next_tr = (1.0 - self.D_FACTOR) + self.D_FACTOR * self.sim_mat.T.dot(tr)
